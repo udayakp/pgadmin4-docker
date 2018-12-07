@@ -25,9 +25,9 @@ file_env() {
 
 if [ "$1" = 'pgadmin4' ]; then
 	cd "$(python -c 'import os; print(os.path.dirname(os.__file__))')/site-packages/pgadmin4"
-
+	chmod +x config.py
 	if [ ! -f "config_local.py" ]; then
-		su cp config.py config_local.py
+		cp config.py config_local.py
 
 		file_env 'MAIL_SERVER' 'localhost'
 		file_env 'MAIL_PORT'  "25"
