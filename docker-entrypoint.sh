@@ -27,7 +27,7 @@ if [ "$1" = 'pgadmin4' ]; then
 	cd "$(python -c 'import os; print(os.path.dirname(os.__file__))')/site-packages/pgadmin4"
 
 	if [ ! -f "config_local.py" ]; then
-		sudo cp config.py config_local.py
+		su cp config.py config_local.py
 
 		file_env 'MAIL_SERVER' 'localhost'
 		file_env 'MAIL_PORT'  "25"
