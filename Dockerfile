@@ -56,7 +56,8 @@ RUN set -ex \
 VOLUME /var/lib/pgadmin
 
 COPY docker-entrypoint.sh /usr/local/bin/
-ENTRYPOINT ["docker-entrypoint.sh"]
+COPY ./docker-entrypoint.sh /docket-entrypoint.sh
+ENTRYPOINT ["/docker-entrypoint.sh"]
 
 EXPOSE 5050
 CMD ["pgadmin4"]
