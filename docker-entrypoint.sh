@@ -25,7 +25,7 @@ file_env() {
 
 if [ "$1" = 'pgadmin4' ]; then
 	cd "$(python -c 'import os; print(os.path.dirname(os.__file__))')/site-packages/pgadmin4"
-	chmod +x config.py
+
 	if [ ! -f "config_local.py" ]; then
 		cp config.py config_local.py
 
