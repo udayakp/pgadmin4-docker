@@ -27,7 +27,7 @@ RUN set -ex \
 
 VOLUME /var/lib/pgadmin
 
-COPY docker-entrypoint.sh /usr/local/bin/
+COPY ./docker-entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 EXPOSE 5050
